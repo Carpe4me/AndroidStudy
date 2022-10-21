@@ -15,4 +15,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/room_java"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:insetLeft="8dp"
+                android:insetTop="8dp"
+                android:insetRight="8dp"
+                android:insetBottom="8dp"
+                android:text="Room Java" />
+
+            <Button
+                android:id="@+id/room_kotlin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:insetLeft="8dp"
+                android:insetTop="8dp"
+                android:insetRight="8dp"
+                android:insetBottom="8dp"
+                android:text="Room Kotlin" />
+        </LinearLayout>
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
