@@ -16,12 +16,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         binding.roomJava.setOnClickListener {
-            startActivity(
-                Intent(
-                    this,
-                    RoomActivity::class.java
-                )
-            )
+            startActivity(Intent(this, RoomActivity::class.java))
+        }
+        binding.roomKotlin.setOnClickListener {
+            startActivity(Intent(this, com.study.android.morden.kotlin.RoomActivity::class.java))
         }
     }
 }

@@ -1,5 +1,6 @@
 package com.study.android.morden.java;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -29,6 +30,7 @@ public class Todo {
         this.id = id;
     }
 
+    @NonNull
     @Override
     public String toString() {
         return "Todo{" +

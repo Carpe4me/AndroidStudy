@@ -29,6 +29,10 @@
             android:name=".morden.java.RoomActivity"
             android:exported="false">
         </activity>
+        <activity
+            android:name=".morden.kotlin.RoomActivity"
+            android:exported="false">
+        </activity>
     </application>
 
 </manifest>
