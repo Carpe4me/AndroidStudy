@@ -1,5 +1,6 @@
 package com.study.android.morden.java;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,7 +19,6 @@ public class RoomActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         AppDatabase db = Room.databaseBuilder(this, AppDatabase.class, "todo-db_java")
-                .allowMainThreadQueries()
                 .build();
 
         // UI 갱신
@@ -28,8 +28,23 @@ public class RoomActivity extends AppCompatActivity {
 
         // 버튼 클릭시 DB에 Insert
         binding.addButton.setOnClickListener(v -> {
-            db.todoDao().insert(new Todo(binding.result.getText().toString()));
+            new InsertAyncTask(db.todoDao())
+                    .execute(new Todo(binding.result.getText().toString()));
         });
 
+    }
+
+    private static class InsertAyncTask extends AsyncTask<Todo, Void, Void>{
+        private TodoDao mTodoDao;
+
+        public InsertAyncTask(TodoDao mTodoDao) {
+            this.mTodoDao = mTodoDao;
+        }
+
+        @Override
+        protected Void doInBackground(Todo... todos) {
+            mTodoDao.insert(todos[0]);
+            return null;
+        }
     }
 }
