@@ -21,10 +21,14 @@ public class RoomActivity extends AppCompatActivity {
                 .allowMainThreadQueries()
                 .build();
 
-        binding.result.setText(db.todoDao().getAll().toString());
+        // UI 갱신
+        db.todoDao().getAll().observe(this, todos -> {
+            binding.result.setText(todos.toString());
+        });
+
+        // 버튼 클릭시 DB에 Insert
         binding.addButton.setOnClickListener(v -> {
             db.todoDao().insert(new Todo(binding.result.getText().toString()));
-            binding.result.setText(db.todoDao().getAll().toString());
         });
 
     }

@@ -14,7 +14,7 @@ class RoomActivity: AppCompatActivity() {
         binding = ActivityRoomBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val db: AppDatabase = Room.databaseBuilder(this, AppDatabase::class.java, "todo-db_kotlin")
+        val db = Room.databaseBuilder(this, AppDatabase::class.java, "todo-db_kotlin")
             .allowMainThreadQueries()
             .build()
 
