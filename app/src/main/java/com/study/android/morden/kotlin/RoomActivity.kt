@@ -27,7 +27,7 @@ class RoomActivity: AppCompatActivity() {
 
         binding.addButton.setOnClickListener {
             lifecycleScope.launch(Dispatchers.IO){
-                db.todoDao().insert(Todo(binding.result.text.toString()))
+                db.todoDao().insert(Todo(binding.todoEdit.text.toString()))
             }
         }
     }

@@ -29,7 +29,7 @@ public class RoomActivity extends AppCompatActivity {
         // 버튼 클릭시 DB에 Insert
         binding.addButton.setOnClickListener(v -> {
             new InsertAyncTask(db.todoDao())
-                    .execute(new Todo(binding.result.getText().toString()));
+                    .execute(new Todo(binding.todoEdit.getText().toString()));
         });
 
     }
