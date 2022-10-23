@@ -7,17 +7,14 @@ import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.study.android.R;
-import com.study.android.databinding.ActivityRoomBinding;
+import com.study.android.databinding.ActivityRoomJavaBinding;
 
 public class RoomActivity extends AppCompatActivity {
-
-    private ActivityRoomBinding viewBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //viewBinding = ActivityRoomBinding.inflate(getLayoutInflater());
-        ActivityRoomBinding dataBinding = DataBindingUtil.setContentView(this, R.layout.activity_room);
+        ActivityRoomJavaBinding dataBinding = DataBindingUtil.setContentView(this, R.layout.activity_room_java);
         dataBinding.setLifecycleOwner(this);
 
         RoomViewModel viewModel = new ViewModelProvider(this).get(RoomViewModel.class);

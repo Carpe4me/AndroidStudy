@@ -6,13 +6,13 @@
     <data>
         <variable
             name="viewModel"
-            type="com.study.android.morden.kotlin.RoomViewModel" />
+            type="com.study.android.morden.java.RoomViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".morden.kotlin.RoomActivity">
+        tools:context=".morden.java.RoomActivity">
 
         <Button
             android:id="@+id/add_button"
