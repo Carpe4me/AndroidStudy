@@ -2,7 +2,9 @@ package com.study.android.morden.kotlin
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.room.Room
+import com.study.android.R
 import com.study.android.databinding.ActivityRoomBinding
 
 class RoomActivity: AppCompatActivity() {
@@ -18,10 +20,11 @@ class RoomActivity: AppCompatActivity() {
             .allowMainThreadQueries()
             .build()
 
-        binding.result.text = db.todoDao().getAll().toString()
+
+        db.todoDao().getAll().observe(this, Observer { binding.result.text = it.toString() })
+
         binding.addButton.setOnClickListener {
             db.todoDao().insert(Todo(binding.result.text.toString()))
-            binding.result.text = db.todoDao().getAll().toString()
         }
     }
 }
