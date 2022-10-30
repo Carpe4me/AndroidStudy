@@ -27,12 +27,13 @@
         </activity>
         <activity
             android:name=".morden.java.RoomActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".morden.kotlin.RoomActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false"/>
+        <activity
+            android:name=".ui.java.listview.ListViewActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>
