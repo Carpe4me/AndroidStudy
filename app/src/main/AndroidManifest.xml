@@ -37,6 +37,9 @@
         <activity
             android:name=".ui.java.listview.RecyclerViewActivity"
             android:exported="true" />
+        <activity
+            android:name=".ui.listview.kotlin.RecyclerViewKotlinActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
