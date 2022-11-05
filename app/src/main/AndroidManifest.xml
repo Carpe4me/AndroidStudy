@@ -30,10 +30,13 @@
             android:exported="false" />
         <activity
             android:name=".morden.kotlin.RoomActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".ui.java.listview.ListViewActivity"
-            android:exported="true"/>
+            android:exported="true" />
+        <activity
+            android:name=".ui.java.listview.RecyclerViewActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
