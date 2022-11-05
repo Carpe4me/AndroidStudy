@@ -2,7 +2,9 @@ package com.study.android.ui.listview.kotlin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.study.android.R
 import com.study.android.databinding.ActivityRecyclerViewKotlinBinding
 
@@ -47,6 +49,16 @@ class RecyclerViewKotlinActivity : AppCompatActivity() {
     private fun initializeViews() {
         binding.recyclerTodoList.layoutManager = LinearLayoutManager(this)
         binding.recyclerTodoList.adapter = TodoAdapter(todos)
+
+        binding.recyclerTodoList.addOnScrollListener(object: RecyclerView.OnScrollListener(){
+            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                super.onScrollStateChanged(recyclerView, newState)
+                if(!binding.recyclerTodoList.canScrollVertically(1)
+                    && newState == RecyclerView.SCROLL_STATE_IDLE){
+                    Toast.makeText(recyclerView.context, "last item ", Toast.LENGTH_SHORT).show()
+                }
+            }
+        })
 
         binding.clearButton.setOnClickListener {
             (binding.recyclerTodoList.adapter as? TodoAdapter)?.clearAll()
